@@ -149,13 +149,13 @@ async function FormCard({ form }: { form: Form }) {
     <Card>
       <CardHeader>
         <CardTitle>
-          <span className="flex  gap-2 items-center justify-between">
+          <span className="flex  gap-2 items-center justify-between mb-2">
             <span className="truncate text-bold"> {form.name}</span>
           </span>
           {form.published && <Badge>Published</Badge>}
           {!form.published && <Badge variant={"destructive"}>draft</Badge>}
         </CardTitle>
-        <CardDescription className="flex items-center justify-between text-muted-foreground text-muted">
+        <CardDescription className="flex items-start  text-white/60 justify-between ">
           {formatDistance(form.createdAt, new Date(), {
             addSuffix: true,
           })}
@@ -168,7 +168,7 @@ async function FormCard({ form }: { form: Form }) {
             </span>
           )}
         </CardDescription>
-        <CardContent className="truncate text-sm text-muted-foreground h-[20px]">
+        <CardContent className="w-full text-sm flex items-start   h-[20px] text-white">
           {form.description || "No description"}
         </CardContent>
         <CardFooter>
