@@ -17,14 +17,14 @@ datasource db {
 model Form {
   id              Int              @id @default(autoincrement())
   userId          String
-  createdAt       DateTime         @default(now())
-  published       Boolean          @default(false)
   name            String
   description     String
+  createdAt       DateTime         @default(now())
+  published       Boolean          @default(false)
   content         String           @default("[]")
   visits          Int              @default(0)
   submission      Int              @default(0)
-  shareURL        String           @default(uuid())
+  shareURL        String           @unique @default(uuid())
   FormSubmissions FormSubmission[]
 
   //user cannot create more than one from 
@@ -33,8 +33,8 @@ model Form {
 
 model FormSubmission {
   id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
   Form      Form?    @relation(fields: [formId], references: [id])
   formId    Int?
-  content   String
+  content   String 
+  createdAt DateTime @default(now())
 }

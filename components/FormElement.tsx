@@ -3,6 +3,7 @@ import { TextFieldFormElement } from "./fields/TextField";
 // element types in the application
 // we are doing to store json object in database
 export type ElementsType = "TextField";
+export type submitFunction = (key: string, value: string) => void;
 export type FormElement = {
   type: ElementsType;
 
@@ -21,10 +22,18 @@ export type FormElement = {
   //preview form
   formComponent: React.FC<{
     elementInstance: FormElementInstance;
+    submitValue?: (key: string, value: string) => void;
+    isInvalid?: boolean;
+    defaultValue?: string;
   }>;
   propertiesComponent: React.FC<{
     elementInstance: FormElementInstance;
   }>;
+
+  validation: (
+    formElement: FormElementInstance,
+    currentValue: string
+  ) => boolean;
 };
 
 export type FormElementInstance = {
