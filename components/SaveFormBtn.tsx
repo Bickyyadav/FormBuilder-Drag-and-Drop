@@ -16,7 +16,7 @@ function SaveFormBtn({ id }: { id: number }) {
       await UpdateFormContent(id, JsonElements);
       toast("file submitted successfully");
     } catch (error) {
-      console.log("🚀 ~ updateFormContent ~ error:", error);
+      // console.log("🚀 ~ updateFormContent ~ error:", error);
     }
   };
 

@@ -50,7 +50,7 @@ const CreateFormButton = () => {
   async function onSubmit(values: typeSchemaType) {
     try {
       const formId = await CreateFrom(values);
-      console.log("🚀 ~ onSubmit ~ formId:", formId);
+
       toast("form created successfully");
       router.push(`/builder/${formId}`);
     } catch (error) {
@@ -59,7 +59,7 @@ const CreateFormButton = () => {
       //   description: "something went wrong please try again latter",
       //   variant: "destructive",
       // });
-      console.log("🚀 ~ onSubmit ~ error:", error);
+      // console.log("🚀 ~ onSubmit ~ error:", error);
     }
   }
 

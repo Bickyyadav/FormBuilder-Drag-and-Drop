@@ -7,7 +7,7 @@ function ErrorPage({ error }: { error: Error }) {
   useEffect(() => {
     console.log("====================================");
     console.error(error);
-    console.log("====================================");
+  
   }, [error]);
   return (
     <div className="flex w-full h-full items-center justify-center flex-col">

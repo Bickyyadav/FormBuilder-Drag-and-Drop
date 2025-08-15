@@ -27,7 +27,7 @@ function PublishFormBtn({ id }: { id: number }) {
       toast("Your from are now available to the public");
       router.refresh();
     } catch (error) {
-      console.log("🚀 ~ publishForm ~ error:", error);
+      // console.log("🚀 ~ publishForm ~ error:", error);
       toast("Something went Wrong");
     }
   }

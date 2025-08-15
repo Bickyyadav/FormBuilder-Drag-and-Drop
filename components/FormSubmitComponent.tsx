@@ -53,12 +53,12 @@ function FormSubmitComponent({
     }
 
     try {
-      console.log("🚀 ~ submitForm ~ formValues.current:", formValues.current);
+      // console.log("🚀 ~ submitForm ~ formValues.current:", formValues.current);
       const JsonContent = JSON.stringify(formValues.current);
       await SubmitForm(formUrl, JsonContent);
       setSubmitted(true);
     } catch (error) {
-      console.log("🚀 ~ submitForm ~ error:", error);
+      // console.log("🚀 ~ submitForm ~ error:", error);
       toast("Something went wrong");
     }
   };

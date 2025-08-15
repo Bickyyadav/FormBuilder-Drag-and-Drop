@@ -30,7 +30,7 @@ async function FormDetailsPage({
 }) {
   const { id } = params;
   const form = await GetFormsById(Number(id));
-  console.log("🚀 ~ BuilderPage ~ form:", form);
+  
   if (!form) {
     throw new Error("form not found");
   }
@@ -107,7 +107,7 @@ async function SubmissionTable({ id }: { id: number }) {
   if (!form) {
     throw new Error("form not found");
   }
-  console.log("🚀 ~ SubmissionTable ~ form.content:", form.content);
+ 
   const formElements = JSON.parse(form.content) as FormElementInstance[];
 
   const columns: {
