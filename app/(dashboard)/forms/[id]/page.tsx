@@ -188,7 +188,7 @@ export function RowCell({
   type: ElementsType;
   value: string;
 }) {
-  let node: ReactNode = value;
+  const node: ReactNode = value;
   return <TableCell>{node}</TableCell>;
 }
 
