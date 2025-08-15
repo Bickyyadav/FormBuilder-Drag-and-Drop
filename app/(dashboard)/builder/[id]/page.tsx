@@ -2,16 +2,16 @@ import { GetFormsById } from "@/actions/from";
 import FormBuilder from "@/components/FormBuilder";
 import React from "react";
 
-async function BuilderPage({
-  params,
-}: {
+interface BuilderPageProps {
   params: {
     id: string;
   };
-}) {
+}
+
+async function BuilderPage({ params }: BuilderPageProps) {
   const { id } = params;
   const form = await GetFormsById(Number(id));
-  
+
   if (!form) {
     throw new Error("form not found");
   }
