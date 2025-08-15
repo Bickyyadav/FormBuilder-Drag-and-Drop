@@ -24,7 +24,7 @@ import Confetti from "react-confetti";
 
 function FormBuilder({ form }: { form: Form }) {
   const [isReady, setIsReady] = useState(false);
-  const { setElements } = useDesigner();
+  const { setElements, setSelectedElement } = useDesigner();
   //for clicking with mouse and do drag and also delete
 
   const mouseSensor = useSensor(MouseSensor, {
@@ -45,10 +45,10 @@ function FormBuilder({ form }: { form: Form }) {
   useEffect(() => {
     const elements = JSON.parse(form.content);
     setElements(elements);
-    // setIsReady(true);
+    setSelectedElement(null);
     const readyTimeOut = setTimeout(() => setIsReady(true), 500);
     return () => clearTimeout(readyTimeOut);
-  }, [form, setElements]);
+  }, [form, setElements, isReady, setSelectedElement]);
 
   if (!isReady) {
     return (

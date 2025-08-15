@@ -1,8 +1,30 @@
 import React from "react";
 import { TextFieldFormElement } from "./fields/TextField";
+import { TitleFieldFormElement } from "./fields/TitleField";
+import { SubTitleFieldFormElement } from "./fields/SubtitleField";
+import { ParagraphFieldFormElement } from "./fields/ParagraphField";
+import { SeparatorFieldFormElement } from "./fields/SeparatorField";
+import { SpacerFieldFormElement } from "./fields/SpacerField";
+import { NumberFieldFormElement } from "./fields/NumberField";
+import { TextAreaFormElement } from "./fields/TextAreaField";
+import { DateFieldFormElement } from "./fields/DateField";
+import { SelectFieldFormElement } from "./fields/SelectedField";
+import { CheckboxFieldFormElement } from "./fields/CheckboxField";
+// import { SubTitleFieldFormElement } from "./fields/SubtitleField";
 // element types in the application
 // we are doing to store json object in database
-export type ElementsType = "TextField";
+export type ElementsType =
+  | "TextField"
+  | "TitleField"
+  | "SubTitleField"
+  | "ParagraphField"
+  | "SeparatorField"
+  | "SpacerField"
+  | "NumberField"
+  | "TextAreaField"
+  | "DateField"
+  | "SelectedField"
+  | "CheckboxField";
 export type submitFunction = (key: string, value: string) => void;
 export type FormElement = {
   type: ElementsType;
@@ -49,6 +71,16 @@ type FormElementsType = {
 
 export const FormElements: FormElementsType = {
   TextField: TextFieldFormElement,
+  TitleField: TitleFieldFormElement,
+  SubTitleField: SubTitleFieldFormElement,
+  ParagraphField: ParagraphFieldFormElement,
+  SeparatorField: SeparatorFieldFormElement,
+  SpacerField: SpacerFieldFormElement,
+  NumberField: NumberFieldFormElement,
+  TextAreaField: TextAreaFormElement,
+  DateField: DateFieldFormElement,
+  SelectedField: SelectFieldFormElement,
+  CheckboxField: CheckboxFieldFormElement,
 };
 
 // function FormElement() {
